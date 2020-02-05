@@ -9,10 +9,12 @@ public class Vendor
     private int stock;
     private int deposit;
     private int change;
+    private static double totalSales;
+
           /**
            * Constructs a Vendor
-           * @param price the price of a single item in cents (int)
-           * @param stock number of items to place in stock (int)
+           * param price the price of a single item in cents (int)
+           * param stock number of items to place in stock (int)
            */
     public Vendor (int p, int s)
     {
@@ -24,7 +26,7 @@ public class Vendor
 
     /**
      * Sets the quantity of items in stock.
-     * @param qty number of items to place in stock (int)
+     * param qty number of items to place in stock (int)
      */
     public void setStock (int numberOfItemsPlaced)
     {
@@ -43,7 +45,7 @@ public class Vendor
     /**
      * Adds a specified amount (in cents) to the
      * deposited amount.
-     * @param number of cents to add to the deposit (int)
+     * param number of cents to add to the deposit (int)
      */
     public void addMoney (int cents)
     {
@@ -74,8 +76,12 @@ public class Vendor
         {
             stock--;
             change = deposit - price;
-            
+            deposit = 0;
+            return true;
         }
+        change = deposit;
+        deposit = 0;
+        return false;
     }
 
     /**
@@ -83,8 +89,11 @@ public class Vendor
      * the last sale or refund).
      * @return number of cents in the current change (int)
      */
-  ... getChange ...
+    public int getChange ()
     {
-    ...
+        int a = change;
+        change = 0;
+        return a;
     }
+    public static double getTotalSales
 }
