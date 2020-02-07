@@ -9,7 +9,7 @@ public class Vendor
     private int stock;
     private int deposit;
     private int change;
-    private static double totalSales;
+    private static double totalSales = 0;
 
           /**
            * Constructs a Vendor
@@ -77,6 +77,7 @@ public class Vendor
             stock--;
             change = deposit - price;
             deposit = 0;
+            totalSales += price;
             return true;
         }
         change = deposit;
@@ -95,5 +96,10 @@ public class Vendor
         change = 0;
         return a;
     }
-    public static double getTotalSales
+    public static double getTotalSales ()
+    {
+        double b = totalSales / 100;
+        totalSales = 0;
+        return b;
+    }
 }
