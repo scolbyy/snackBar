@@ -30,6 +30,12 @@ public class Complex
         String answer = first + " + " + second + "i";
         return answer;
     }
+    public Complex multiply (Complex other)
+    {
+        double multiplyFirsts = first * other.first;
+        double multiplyFirstAndSecond = first * other.second;
+        double multiplySecondAnd
+    }
     public static void main(String[] args)
     {
         Complex a = new Complex(6.9, 2.42);
