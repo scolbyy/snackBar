@@ -34,7 +34,11 @@ public class Complex
     {
         double multiplyFirsts = first * other.first;
         double multiplyFirstAndSecond = first * other.second;
-        double multiplySecondAnd
+        double multiplySecondAndFirst = second * other.first;
+        double multiplySeconds = second * other.second;
+        double firstNew = multiplyFirsts - multiplySeconds;
+        double secondNew = multiplyFirstAndSecond + multiplySecondAndFirst;
+        return new Complex (firstNew, secondNew);
     }
     public static void main(String[] args)
     {
@@ -43,5 +47,6 @@ public class Complex
         Complex b = new Complex(7.3, 8.889);
         System.out.println(b.add(a));
         System.out.println(a);
+        System.out.println(b.multiply(b));
     }
 }
